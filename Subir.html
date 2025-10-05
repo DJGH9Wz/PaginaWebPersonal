@@ -23,14 +23,38 @@
       <h2>Selecciona tus archivos</h2>
       <p>Puedes subir tus prácticas, exámenes u otros documentos desde tu computadora.</p>
 
-      <!-- Formulario para subir archivos -->
+      <!--Formulario para subir archivos-->
       <form action="#" method="post" enctype="multipart/form-data">
-        <label for="archivo">Selecciona archivo:</label><br><br>
-        <input type="file" id="archivo" name="archivo" multiple><br><br>
-        <button type="submit">Subir archivo</button>
-      </form>
+    <label>Nombre del archivo o proyecto:</label><br>
+    <input type="text" name="nombre" required placeholder="Ej: Práctica 3"><br><br>
+
+    <label>Descripción:</label><br>
+    <textarea name="descripcion" required placeholder="Describe el contenido..."></textarea><br><br>
+
+    <label>Tipo de material:</label><br>
+    <select name="tipo" required>
+      <option value="">--Selecciona el tipo--</option>
+      <option>Práctica</option>
+      <option>Examen</option>
+      <option>Proyecto</option>
+      <option>Otro</option>
+    </select><br><br>
+
+    <label>Asignatura o curso:</label><br>
+    <input type="text" name="curso" required placeholder="Ej: Estructuras Discretas"><br><br>
+
+    <label>Fecha o periodo:</label><br>
+    <input type="date" name="fecha"><br><br>
+
+    <label>Selecciona el archivo (PDF):</label><br>
+    <input type="file" name="archivo" accept=".pdf" required><br><br>
+
+    <button type="submit">Subir</button>
+    <button type="reset">Restablecer</button>
+  </form>
     </section>
 
+    <!--Ejemplos (por ahora)-->
     <section>
       <h2>Archivos subidos recientemente</h2>
       <ul>
