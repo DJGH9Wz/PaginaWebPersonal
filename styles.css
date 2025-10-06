@@ -6,13 +6,14 @@ body {
 
 /* Cabecera */
 nav {
-  background-color: #5e2129 ; 
+  background: linear-gradient(to bottom, #971325, #5e2129); 
   color: white;
   text-align: center;
   padding: 20px ;
 }
 
 nav h1 {
+  font-family: none;
   margin: 0;
   font-size: 28px;
 }
@@ -52,7 +53,7 @@ th, td {
 }
 
 th {
-  background-color: #ff8730ca;
+  background-color: #ca7d00ca;
   color: white;
 }
 
@@ -65,6 +66,70 @@ footer {
   margin-top: 40px;
 }
 main{
-  background-color: #ff8730ca ;
   text-align: center;
+}
+html{
+  background-color: #f2ede4;
+}
+
+.principal{
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px ;
+  font-family: 'Montserrat', sans-serif;
+  background-color: whitesmoke;
+}
+
+.principal h2{
+  color: white;
+  background-color: #5e2129;
+  padding: 10px; 
+  border-radius: 20px ;
+  box-sizing: border-box; 
+  width: 100%;  
+  text-align: center;                    
+}
+
+.principal p{
+  color: #474747;                            
+  line-height: 1.6;
+  text-align: center;
+}
+.principal ul{
+  text-align: center;
+}
+
+.secundario{
+  width: 180px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px ;
+  font-family: 'Montserrat', sans-serif;
+  background-color: whitesmoke;
+}
+
+.contenedor-art{
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 20px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #f2ede4, #ffd78c);
+}
+
+form{
+  width: 60%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom, #2b96bd, #8ebac7);
+  border-radius: 60px;
+  border-color: #0f3e4e;
+  border-style: solid;
+  border-width: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
 }
