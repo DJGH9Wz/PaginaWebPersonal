@@ -33,10 +33,23 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+
 }
 
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #ffd700;
+  transition: width 0.3s;
+  margin: auto;
 }
 
 /* Tabla */
@@ -55,6 +68,19 @@ th, td {
 th {
   background-color: #ca7d00ca;
   color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #c58935c2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffdc41d2;
+}
+
+tr:hover {
+  background-color: #ff7d41;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -92,6 +118,10 @@ html{
   text-align: center;                    
 }
 
+.principal h2::before {
+  content: " ° ";
+}
+
 .principal p{
   color: #474747;                            
   line-height: 1.6;
@@ -99,6 +129,17 @@ html{
 }
 .principal ul{
   text-align: center;
+}
+
+.principal ul li {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.principal ul li::before {
+  content: "→ ";
+  color: #5e2129;
+  font-weight: bold;
 }
 
 .secundario{
@@ -111,6 +152,10 @@ html{
   background-color: whitesmoke;
 }
 
+.secundario:hover {
+  background-color: #fff1c7;
+}
+
 .contenedor-art{
   display: flex;
   justify-content: space-around;
@@ -120,16 +165,28 @@ html{
   background: linear-gradient(to bottom, #f2ede4, #ffd78c);
 }
 
+.contenedor-art > article {
+  flex: 1;
+  margin: 10px;
+}
+
+
 form{
   width: 60%;
   max-width: 500px;
   margin: 40px auto;
   padding: 30px;
-  background: linear-gradient(to bottom, #2b96bd, #8ebac7);
+  background: linear-gradient(to bottom, #87b6c7, #ffffff);
   border-radius: 60px;
   border-color: #0f3e4e;
   border-style: solid;
   border-width: 3px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Montserrat', sans-serif;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 2px solid #5e2129;
+  background-color: #fffef3;
 }
