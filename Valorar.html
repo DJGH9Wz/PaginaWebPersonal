@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorar Material - UNSA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <nav>
+        <h1>Repositorio UNSA - 2025</h1>
+        <ul>
+            <li><a href="pagina.html">Inicio</a></li>
+            <li><a href="NuevosArchivos.html">Nuevos archivos</a></li>
+            <li><a href="Subir.html">Subir Archivos</a></li>
+            <li><a href="Valorar.html" class="active">Valorar</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+
+<main>
+    <section class="principal">
+        <h2>Panel de Valoración de Material</h2>
+        <p>Revisa el contenido y ayuda a la comunidad calificando la utilidad de los archivos.</p>
+    </section>
+
+    <section class="contenedor-archivos">
+    
+        <article class="secundario">
+            <h3 class="archivo-titulo">Examen Parcial - Cálculo A</h3>
+            
+            <div class="contenedor-pdf">
+                <iframe src="pdf/examen1.pdf#toolbar=0"></iframe>
+            </div>
+            
+            <div class="valoracion-container">
+                <form action="procesar_voto.php" method="POST">
+                    <input type="hidden" name="id_material" value="1">
+                    <button type="submit" name="voto" value="positivo" class="btn-voto btn-util">👍 Útil</button>
+                    <button type="submit" name="voto" value="negativo" class="btn-voto btn-dificil">🔥 Muy Difícil</button>
+                </form>
+            </div>
+        </article>
+
+        <article class="secundario">
+            <h3 class="archivo-titulo">Práctica 3 - Discretas</h3>
+            
+            <div class="contenedor-pdf">
+                <iframe src="pdf/practica3.pdf#toolbar=0"></iframe>
+            </div>
+
+            <div class="valoracion-container">
+                <form action="procesar_voto.php" method="POST">
+                    <input type="hidden" name="id_material" value="2">
+                    <button type="submit" name="voto" value="positivo" class="btn-voto btn-util">👍 Útil</button>
+                    <button type="submit" name="voto" value="negativo" class="btn-voto btn-dificil">🔥 Muy Difícil</button>
+                </form>
+            </div>
+        </article>
+
+    </section>
+</main>
+
+<footer>Manuel Valdivia - 2025</footer>
+    
+</body>
+</html>
