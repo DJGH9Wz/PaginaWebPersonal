@@ -23,24 +23,6 @@ Integra **autenticación de operadores**, **persistencia de datos en SQL** y una
 | `/Subir.html` | **Gestión de Activos** — Área privada para subir PDFs |
 | `/pdf/<filename>` | **Recuperación Dinámica** — Visualización de documentos |
 
----
-
-## ✨ Funcionalidades Destacadas
-
-### 🔐 Autenticación SQL Real
-Validación de credenciales directamente contra la base de datos.
-
-### 💾 Persistencia de Mensajes
-Los mensajes enviados desde el formulario de contacto se almacenan en el **Core SQL**.
-
-### 🔎 Buscador Dinámico
-Filtrado en tiempo real de activos disponibles dentro de la bóveda.
-
-### 🖥️ Estética Cyberpunk / Terminal
-Diseño visual basado en interfaces técnicas, con **tipografía monoespaciada** y efectos de carga.
-
-### 🧠 Gestión de Sesiones
-Protección de rutas privadas mediante control de sesiones en **Flask**.
 
 ---
 
