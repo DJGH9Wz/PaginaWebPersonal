@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Repositorio UNSA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
+            
+            <ul class="nav-main">
+                <li><a href="pagina.html" class="active">Explorar</a></li>
+                <li><a href="NuevosArchivos.html">Recientes</a></li>
+                <li><a href="Subir.html">Añadir</a></li>
+                <li><a href="Valorar.html">Feedback</a></li>
+                <li><a href="Buscar.html">Buscador</a></li>
+            </ul>
+
+            <ul class="nav-user">
+                <li><a href="MiPerfil.html">Mi Perfil</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Acerca.html">Sistema</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="principal">
+            <h2>📧 Contacto y Soporte</h2>
+            <p>¿Tienes alguna pregunta, sugerencia o necesitas ayuda? Estamos aquí para escucharte. Completa el formulario y te responderemos lo antes posible.</p>
+        </section>
+
+        <section class="contenedor-formulario">
+            <form action="#" method="POST">
+                <h2>💬 Envíanos un Mensaje</h2>
+                
+                <label>Nombre completo:</label>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+                <label>Correo electrónico:</label>
+                <input type="email" name="email" placeholder="tu.email@unsa.edu.pe" required>
+
+                <label>Código de estudiante (opcional):</label>
+                <input type="text" name="codigo" placeholder="Ej: 2024-12345">
+
+                <label>Asunto:</label>
+                <select name="asunto" required>
+                    <option value="">-- Selecciona un asunto --</option>
+                    <option>Problema técnico</option>
+                    <option>Sugerencia de mejora</option>
+                    <option>Reporte de contenido inapropiado</option>
+                    <option>Solicitud de nueva funcionalidad</option>
+                    <option>Quiero ser moderador</option>
+                    <option>Colaboración institucional</option>
+                    <option>Otro</option>
+                </select>
+
+                <label>Mensaje:</label>
+                <textarea name="mensaje" rows="8" placeholder="Describe tu consulta o sugerencia detalladamente..." required></textarea>
+
+                <label>Prioridad:</label>
+                <select name="prioridad">
+                    <option>Normal</option>
+                    <option>Alta (urgente)</option>
+                    <option>Baja (informativa)</option>
+                </select>
+
+                <button type="submit">Enviar Mensaje</button>
+                <button type="reset">Limpiar Formulario</button>
+            </form>
+        </section>
+
+        <section class="contenedor">
+            <article class="principal">
+                <h2>📞 Información de Contacto</h2>
+                <p><strong>📧 Email:</strong> repositorio@unsa.edu.pe</p>
+                <p><strong>📱 WhatsApp:</strong> +51 987 654 321</p>
+                <p><strong>🏢 Ubicación:</strong> UNSA - Campus Principal, Arequipa</p>
+                <p><strong>⏰ Horario de atención:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM</p>
+                <p><strong>⏱️ Tiempo de respuesta:</strong> 24-48 horas hábiles</p>
+            </article>
+
+            <article class="principal">
+                <h2>🐛 Reportar un Problema</h2>
+                <p>Si encuentras algún error técnico, contenido inapropiado o tienes problemas para acceder al repositorio, por favor repórtalo usando el formulario.</p>
+                <p><strong>Incluye:</strong></p>
+                <ul>
+                    <li>Descripción detallada del problema</li>
+                    <li>Pasos para reproducir el error</li>
+                    <li>Capturas de pantalla si es posible</li>
+                    <li>Navegador y sistema operativo que usas</li>
+                </ul>
+            </article>
+
+            <article class="principal">
+                <h2>💡 Sugerencias y Mejoras</h2>
+                <p>Tu opinión es muy importante para nosotros. Si tienes ideas para mejorar el repositorio, nuevas funcionalidades que te gustaría ver, o sugerencias sobre cómo organizar mejor el contenido, no dudes en compartirlas.</p>
+                <p>Las mejores sugerencias son implementadas y los usuarios que las proponen son reconocidos públicamente.</p>
+            </article>
+        </section>
+
+        <section class="principal">
+            <h2>❓ Preguntas Frecuentes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pregunta</th>
+                        <th>Respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>¿Cómo puedo subir archivos?</td>
+                        <td>Ve a la sección "Subir Archivos" y completa el formulario con la información del material</td>
+                    </tr>
+                    <tr>
+                        <td>¿Por qué mi archivo no aparece?</td>
+                        <td>Todos los archivos pasan por una revisión de 24-48 horas antes de publicarse</td>
+                    </tr>
+                    <tr>
+                        <td>¿Puedo eliminar un archivo que subí?</td>
+                        <td>Sí, desde tu perfil puedes gestionar todos tus archivos subidos</td>
+                    </tr>
+                    <tr>
+                        <td>¿Cómo reporto contenido inapropiado?</td>
+                        <td>Usa el formulario de contacto seleccionando "Reporte de contenido inapropiado"</td>
+                    </tr>
+                    <tr>
+                        <td>¿Puedo descargar múltiples archivos?</td>
+                        <td>Actualmente solo se puede descargar de uno en uno, pero estamos trabajando en descarga masiva</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="contenedor">
+            <article class="secundario">
+                <h2>🤝 Únete al Equipo</h2>
+                <p><strong>Buscamos moderadores voluntarios</strong></p>
+                <p>Si te interesa ayudar a revisar el contenido que se sube al repositorio y mantener la calidad del material, ¡únete a nuestro equipo de moderadores!</p>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Ser estudiante activo de la UNSA</li>
+                    <li>Tener buen rendimiento académico</li>
+                    <li>Disponibilidad de 3-5 horas semanales</li>
+                    <li>Compromiso con la comunidad</li>
+                </ul>
+                <button class="btn-voto btn-util" style="width: 100%; margin-top: 10px;">Aplicar como Moderador</button>
+            </article>
+
+            <article class="secundario">
+                <h2>🌐 Redes Sociales</h2>
+                <p><strong>Síguenos en nuestras redes:</strong></p>
+                <p>📘 Facebook: /RepositorioUNSA</p>
+                <p>📸 Instagram: @repositorio_unsa</p>
+                <p>🐦 Twitter: @RepoUNSA</p>
+                <p>💼 LinkedIn: Repositorio UNSA</p>
+                <p><strong>Comparte tus experiencias usando:</strong></p>
+                <p>#RepositorioUNSA #UNSA2025</p>
+            </article>
+
+            <article class="secundario">
+                <h2>📊 Estadísticas de Soporte</h2>
+                <p><strong>Tiempo promedio de respuesta:</strong> 18 horas</p>
+                <p><strongContinuar8:09 p. m.
+Tasa de resolución:</strong> 95%</p>
+<p><strong>Satisfacción de usuarios:</strong> 4.8/5</p>
+<p><strong>Consultas este mes:</strong> 87</p>
+<p><strong>Problemas resueltos:</strong> 82</p>
+</article>
+</section>
+
+    <section class="hero">
+        <div class="hero-card">
+            <h2>🎓 Para Profesores</h2>
+            <p>Si eres docente de la UNSA y te gustaría colaborar con el repositorio, ya sea subiendo material oficial del curso o supervisando el contenido de tu asignatura, contáctanos.</p>
+            <p>Ofrecemos verificación oficial para cuentas de profesores y opciones especiales de gestión de contenido.</p>
+        </div>
+
+        <div class="hero-card">
+            <h2>🏛️ Colaboración Institucional</h2>
+            <p>¿Representas a una facultad, escuela profesional o centro de estudiantes? Podemos trabajar juntos para hacer crecer este repositorio y beneficiar a más estudiantes.</p>
+            <p>Contáctanos para explorar opciones de colaboración institucional.</p>
+        </div>
+    </section>
+</main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                Vault of <span>Djins</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="Acerca.html">Documentación</a>
+                <a href="Contacto.html">Soporte</a>
+                <a href="#">Privacidad</a>
+            </div>
+
+            <div class="system-status">
+                <span class="dot"></span> 
+                <span>Vault Core: v1.0.0 - Stable</span>
+            </div>
+
+            <p class="copyright">
+                © 2025 | Diseñado por Manuel Valdivia | All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

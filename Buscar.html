@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar - Repositorio UNSA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
+            
+            <ul class="nav-main">
+                <li><a href="pagina.html" class="active">Explorar</a></li>
+                <li><a href="NuevosArchivos.html">Recientes</a></li>
+                <li><a href="Subir.html">Añadir</a></li>
+                <li><a href="Valorar.html">Feedback</a></li>
+                <li><a href="Buscar.html">Buscador</a></li>
+            </ul>
+
+            <ul class="nav-user">
+                <li><a href="MiPerfil.html">Mi Perfil</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Acerca.html">Sistema</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="principal">
+            <h2>Buscador Avanzado de Material Académico</h2>
+            <p>Utiliza los filtros para encontrar exactamente el material que necesitas. Puedes buscar por curso, tipo de archivo, profesor o palabras clave.</p>
+        </section>
+
+        <section class="contenedor-formulario">
+            <form action="#" method="GET">
+                <h2>🔍 Búsqueda Avanzada</h2>
+                
+                <label>Palabra clave o título:</label>
+                <input type="text" name="busqueda" placeholder="Ej: Examen parcial, TIF, Práctica 3..." required>
+
+                <label>Curso o asignatura:</label>
+                <select name="curso">
+                    <option value="">-- Todos los cursos --</option>
+                    <option>Cálculo A</option>
+                    <option>Cálculo B</option>
+                    <option>Estructuras Discretas</option>
+                    <option>Programación I</option>
+                    <option>Programación II</option>
+                    <option>Física I</option>
+                    <option>Física II</option>
+                    <option>Química General</option>
+                    <option>Álgebra Lineal</option>
+                    <option>Estadística</option>
+                </select>
+
+                <label>Tipo de material:</label>
+                <select name="tipo">
+                    <option value="">-- Todos los tipos --</option>
+                    <option>Práctica</option>
+                    <option>Examen</option>
+                    <option>TIF</option>
+                    <option>Material de Estudio</option>
+                    <option>Guías</option>
+                    <option>Laboratorio</option>
+                </select>
+
+                <label>Profesor:</label>
+                <input type="text" name="profesor" placeholder="Nombre del profesor (opcional)">
+
+                <label>Fecha desde:</label>
+                <input type="date" name="fecha_desde">
+
+                <label>Fecha hasta:</label>
+                <input type="date" name="fecha_hasta">
+
+                <label>Ordenar por:</label>
+                <select name="ordenar">
+                    <option>Más recientes</option>
+                    <option>Más descargados</option>
+                    <option>Mejor valorados</option>
+                    <option>A-Z</option>
+                    <option>Z-A</option>
+                </select>
+
+                <button type="submit">Buscar Archivos</button>
+                <button type="reset">Limpiar Filtros</button>
+            </form>
+        </section>
+
+        <section class="principal">
+            <h2>Resultados de Búsqueda</h2>
+            <p>Se encontraron <strong>24 archivos</strong> que coinciden con tu búsqueda</p>
+        </section>
+
+        <section class="contenedor-archivos">
+            <article class="secundario">
+                <h3 class="archivo-titulo">📄 Examen Parcial - Cálculo A</h3>
+                <div class="vista-previa-pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                    <p><strong>Profesor:</strong> Dr. García</p>
+                    <p><strong>Fecha:</strong> 15/11/2024</p>
+                    <p><strong>Descargas:</strong> 1,245</p>
+                    <p><strong>Valoración:</strong> ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="valoracion-container">
+                    <button class="btn-voto btn-util">📥 Descargar</button>
+                    <button class="btn-voto btn-dificil">⭐ Favorito</button>
+                </div>
+            </article>
+
+            <article class="secundario">
+                <h3 class="archivo-titulo">📄 TIF - Estructuras Discretas</h3>
+                <div class="vista-previa-pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                    <p><strong>Profesor:</strong> Dra. Mamani</p>
+                    <p><strong>Fecha:</strong> 20/10/2024</p>
+                    <p><strong>Descargas:</strong> 987</p>
+                    <p><strong>Valoración:</strong> ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="valoracion-container">
+                    <button class="btn-voto btn-util">📥 Descargar</button>
+                    <button class="btn-voto btn-dificil">⭐ Favorito</button>
+                </div>
+            </article>
+
+            <article class="secundario">
+                <h3 class="archivo-titulo">📄 Práctica 5 - Física II</h3>
+                <div class="vista-previa-pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                    <p><strong>Profesor:</strong> Ing. Torres</p>
+                    <p><strong>Fecha:</strong> 05/12/2024</p>
+                    <p><strong>Descargas:</strong> 856</p>
+                    <p><strong>Valoración:</strong> ⭐⭐⭐⭐</p>
+                </div>
+                <div class="valoracion-container">
+                    <button class="btn-voto btn-util">📥 Descargar</button>
+                    <button class="btn-voto btn-dificil">⭐ Favorito</button>
+                </div>
+            </article>
+
+            <article class="secundario">
+                <h3 class="archivo-titulo">📄 Guía Completa - Programación I</h3>
+                <div class="vista-previa-pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                    <p><strong>Profesor:</strong> Mg. Flores</p>
+                    <p><strong>Fecha:</strong> 18/11/2024</p>
+                    <p><strong>Descargas:</strong> 743</p>
+                    <p><strong>Valoración:</strong> ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="valoracion-container">
+                    <button class="btn-voto btn-util">📥 Descargar</button>
+                    <button class="btn-voto btn-dificil">⭐ Favorito</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="contenedor">
+            <div class="tarjeta">
+                <button><h2>Página 1 de 6</h2></button>
+            </div>
+            <div class="tarjeta">
+                <button><h2>← Anterior</h2></button>
+            </div>
+            <div class="tarjeta">
+                <button><h2>Siguiente →</h2></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                Vault of <span>Djins</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="Acerca.html">Documentación</a>
+                <a href="Contacto.html">Soporte</a>
+                <a href="#">Privacidad</a>
+            </div>
+
+            <div class="system-status">
+                <span class="dot"></span> 
+                <span>Vault Core: v1.0.0 - Stable</span>
+            </div>
+
+            <p class="copyright">
+                © 2025 | Diseñado por Manuel Valdivia | All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,452 +1,860 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #582f00c2 0%, #f0a400 50%, #582f00c2 100%);
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+:root {
+    --vault-dark: #0a0b0d;   /* Fondo casi negro */
+    --vault-blue: #00d2ff;   /* Azul neón/eléctrico */
+    --vault-gray: #1a1c20;   /* Gris de tarjetas */
+    --djins-gold: #f39c12;   /* Un toque de dorado para resaltar el nombre */
 }
 
-/* Cabecera */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #582f00 0%, #f0a400 50%, #582f00 100%);
+    min-height: 100vh;
+}
+
+html {
+    background: linear-gradient(135deg, #582f00 0%, #f0a400 50%, #582f00 100%);
+}
+
+.logo-vault {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.djins-text {
+    font-weight: 800;
+    color: var(--vault-blue);
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+/* ========================================
+   NAVEGACIÓN
+======================================== */
 nav {
-  background: linear-gradient(to bottom, #971325, #5e2129); 
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-  position: sticky; 
-  top: 0;
-  z-index: 1000;
+    background-color: var(--vault-dark);
+    border-bottom: 2px solid var(--vault-blue);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el título y los links */
+    padding: 0 20px;
+    flex-wrap: wrap; /* Por si hay muchas opciones en pantallas chicas */
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-main {
+    margin-left: 20px; /* Separa los links del título "Repositorio UNSA" */
+}
+
+.nav-user {
+    margin-left: auto; /* Empuja este bloque hacia el extremo derecho */
+    background-color: rgba(255, 255, 255, 0.1); /* Opcional: un fondo sutil para diferenciarlo */
+    border-radius: 25px;
+    padding: 5px 15px;
 }
 
 nav h1 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 10px;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex; 
-  justify-content: center;
-  gap: 25px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+    display: inline-block;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #e0e0e0;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
-  display: inline-block;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
 }
 
 nav ul li a:hover {
-  color: #f0a400; 
-  transform: translateY(-2px);
+    color: var(--vault-blue);
+    text-shadow: 0 0 5px var(--vault-blue);
+    transform: translateY(-3px);
+    background: rgba(240, 164, 0, 0.1);
 }
 
 nav ul li a.active {
-  color: #f0a400;
-  border-bottom: 2px solid #f0a400;
+    text-shadow: 0 0 5px var(--vault-blue);
+    color: var(--vault-blue);
+    font-weight: bold;
+    border-bottom: 2px solid #f0a400;
 }
 
 nav ul li a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0%;
-  background: #f0a400;
-  transition: width 0.3s;
-  margin: auto;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: #f0a400;
+    transition: width 0.3s;
+    margin: auto;
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* Tabla */
-table {
-  margin: 30px auto;
-  border-collapse: collapse;
-  width: 80%;
-  height: 300px;
+/* ========================================
+   MAIN CONTENT
+======================================== */
+main {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-th, td {
-  border: 2px solid #333;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+/* ========================================
+   HERO SECTION
+======================================== */
+.hero {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
 }
 
-th {
-  background-color: #ca7d00ca;
-  color: white;
+.hero-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-tr:nth-child(even) {
-  background-color: #c58935c2;
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
 }
 
-tr:nth-child(odd) {
-  background-color: #ffdc41d2;
+.hero-card h2 {
+    color: white;
+    background: linear-gradient(135deg, #5e2129, #971325);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
 }
 
-tr:hover {
-  background-color: #ff7d41;
-  cursor: pointer;
+.hero-card p {
+    color: #474747;
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: justify;
 }
 
-footer {
-  background-color: #5e2129;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  width: 100%;
-  clear: both; 
-  position: relative; 
+.hero-card ul {
+    list-style: none;
+    margin-top: 15px;
+    text-align: left;
+    color: #474747;
 }
 
-main{
-  text-align: center;
-}
-html{
-  background: linear-gradient(to right, #582f00c2 0%, #f0a400 50%, #582f00c2 100%);
-}
-
-.principal{
-  width: 80%;
-  margin: 30px auto;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px ;
-  font-family: 'Montserrat', sans-serif;
-  background-color: whitesmoke;
+.hero-card ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
 }
 
-.principal h2{
-  color: white;
-  background-color: #5e2129;
-  padding: 10px; 
-  border-radius: 20px ;
-  box-sizing: border-box; 
-  width: 100%;  
-  text-align: center;                    
+.hero-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #5e2129;
+    font-weight: bold;
+}
+
+.hero-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto 0;
+    display: block;
+    border-radius: 10px;
+}
+
+/* ========================================
+   TARJETAS PRINCIPALES
+======================================== */
+.principal {
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    background: #fff8e7;
+}
+
+.principal h2 {
+    color: white;
+    background: linear-gradient(135deg, #5e2129, #7d2d37);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .principal h2::before {
-  content: " ° ";
+    content: "°";
+    margin-right: 8px;
 }
 
-.principal p{
-  color: #474747;                            
-  line-height: 1.6;
-  text-align: center;
-  align-items: center;
+.principal p {
+    color: #474747;
+    line-height: 1.7;
+    text-align: justify;
 }
-.principal ul{
-  text-align: center;
+
+.principal ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .principal ul li {
-  list-style: none;
-  padding-left: 10px;
+    list-style: none;
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
 }
 
 .principal ul li::before {
-  content: "→ ";
-  color: #5e2129;
-  font-weight: bold;
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #5e2129;
+    font-weight: bold;
 }
 
-.secundario{
-  width: 100%;
-  height: 100%;
-  margin: 30px auto;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px ;
-  font-family: 'Montserrat', sans-serif;
-  background-color: whitesmoke;
-  box-sizing: border-box;
-  text-align: center; 
-  justify-content: center;
-  font-weight: bold;
-}
-
-.cont-centrado{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.secundario h1{
-  color: white;
-  background-color: #5e2129;
-  padding: 10px; 
-  border-radius: 20px ;
-  box-sizing: border-box; 
-  width: 100%;    
-}
-.secundario p li{
-  font-size: 400px;
-  font-weight: bolder;
-  align-items: center;
+/* ========================================
+   TARJETAS SECUNDARIAS
+======================================== */
+.secundario {
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .secundario:hover {
-  background-color: #fff1c7;
+    background-color: #fff1c7;
+    transform: translateY(-3px);
 }
 
-.secundario img{
-  width: 100%;
-  height: auto;
+.secundario h1,
+.secundario h2 {
+    color: white;
+    background: linear-gradient(135deg, #5e2129, #971325);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.contenedor-art{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-  margin: 0 auto;
-  background: linear-gradient(to right, #582f00c2 0%, #f0a400 50%, #582f00c2 100%);
+.secundario p {
+    color: #474747;
+    line-height: 1.8;
+    font-weight: 600;
 }
 
-.division-3-7{
-  display: grid;
-  grid-template-columns: 30% 70%;
+.secundario img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
-.contenedor{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 20px;
-  margin: 0 auto;
-  background: linear-gradient(to right, #582f00c2 0%, #f0a400 50%, #582f00c2 100%);
+.cont-centrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========================================
+   CONTENEDORES Y LAYOUTS
+======================================== */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.contenedor-art {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    flex-wrap: wrap;
 }
 
 .contenedor-art > article {
-  flex: 1;
-  margin: 10px;
+    flex: 1;
+    min-width: 300px;
 }
 
+.division-3-7 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.contenedor-filas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+/* ========================================
+   TABLAS
+======================================== */
+.table-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    margin: 30px auto;
+}
+
+th {
+    background: linear-gradient(135deg, #ca7d00, #f0a400);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #ffe9b3;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff5d9;
+}
+
+tr:hover {
+    background-color: #ffd480;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+/* ========================================
+   FORMULARIOS
+======================================== */
 form {
-  width: 100%;
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  color: #0c0c0c;
-  border-radius: 20px;
-  border: 3px solid #5e2129;
-  font-size: 18px;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    color: #0c0c0c;
+    border-radius: 20px;
+    border: 3px solid #5e2129;
+    font-size: 18px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 30px;
-  color: #5e2129;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #5e2129;
+    font-weight: 700;
 }
 
-/* Estilo general para inputs, textarea y select */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5e2129;
+}
+
 form input,
 form textarea,
 form select {
-  width: 90%;
-  padding: 12px 14px;
-  margin-bottom: 18px;
-  background-color: #f3f4ff;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  font-size: 16px;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    background-color: #f3f4ff;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
-/* Tamaño más adecuado para textarea */
 form textarea {
-  height: 100px;
-  resize: vertical;
+    min-height: 120px;
+    resize: vertical;
 }
 
-/* Estados de enfoque */
 form input:focus,
 form textarea:focus,
 form select:focus {
-  outline: none;
-  border-color: #5e2129;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px rgba(94, 33, 41, 0.4);
+    outline: none;
+    border-color: #5e2129;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(94, 33, 41, 0.3);
 }
 
-/* Botón moderno */
 form button {
-  width: 50%;
-  padding: 12px;
-  background-color: #5e2129;
-  color: #fff;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.25s;
-  margin-bottom: 12px;
+    width: 48%;
+    padding: 14px;
+    background: linear-gradient(135deg, #5e2129, #971325);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px 1%;
 }
 
 form button:hover {
-  background-color: #7d2d37;
+    background: linear-gradient(135deg, #7d2d37, #b8142d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(94, 33, 41, 0.4);
 }
 
-.contenedor-img{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+form button[type="reset"] {
+    background: linear-gradient(135deg, #666, #888);
 }
 
-.img-item{
-  width: 90%;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgb(160, 160, 160);
-  text-align: center;
+form button[type="reset"]:hover {
+    background: linear-gradient(135deg, #777, #999);
 }
 
-.img-item img{
-  width: 100%;
-  height: 500px;
-  border-radius: 10px;
+.contenedor-formulario {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #7d2d37 0%, #f0a400 50%, #7d2d37 100%);
+    padding: 40px 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.contenedor-formulario{
-  display:flex;
-  flex-direction:row;
-  background: linear-gradient(to right, #7d2d37 0%, #f0a400 50%, #7d2d37 100%);
-  padding-bottom: 20px;
-  padding-top: 20px;
+/* ========================================
+   TARJETAS DE BOTONES
+======================================== */
+.tarjeta {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    min-width: 250px;
 }
 
-.tarjeta{
-  background:linear-gradient(#b4b4b4,#ffff);
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-radius: 15px;
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    background: linear-gradient(145deg, #fff8e7, #ffe9b3);
 }
 
-.tarjeta button{
-  border: none;
-  background: none;
+.tarjeta button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
 }
 
+.tarjeta h2 {
+    color: #5e2129;
+    font-size: 24px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.tarjeta:hover h2 {
+    color: #971325;
+}
+
+/* ========================================
+   GALERÍA DE IMÁGENES
+======================================== */
+.contenedor-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.img-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.img-item:hover {
+    transform: scale(1.03);
+}
+
+.img-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ========================================
+   CONTENEDOR DE ARCHIVOS Y PDFs
+======================================== */
 .contenedor-archivos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: auto; 
-  gap: 20px;
-  margin-bottom: 20px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    width: 100%;
+    gap: 30px;
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 1400px;
 }
 
 .contenedor-pdf {
     width: 100%;
-    max-width: 800px; 
-    margin: 20px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border: 3px solid #5e2129;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    line-height: 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .contenedor-pdf iframe {
     width: 100%;
-    height: 800px; 
+    height: 600px;
     border: none;
     display: block;
     background: white;
 }
 
 .contenedor-pdf embed {
-  width: 90%;
-  height: 1000px;
-  display: block; 
-  margin: 40px auto;
-  
-  
+    width: 100%;
+    height: 800px;
+    display: block;
 }
 
+/* ========================================
+   VALORACIÓN Y BOTONES
+======================================== */
+.archivo-titulo {
+    font-size: 1.3rem;
+    color: #5e2129;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f3f4ff;
+    border-radius: 10px;
+    font-weight: 700;
+}
 
-.btn-voto {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
+.vista-previa-pdf {
+    background: linear-gradient(135deg, #f3f4ff, #ffffff);
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #5e2129;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
-    color: white;
-    transition: transform 0.2s, background 0.3s;
-    margin: 5px;
-    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
-.btn-util {
-    background-color: #28a745; /* Verde */
+.vista-previa-pdf:hover {
+    background: linear-gradient(135deg, #ffe9b3, #fff5d9);
+    transform: scale(1.02);
 }
 
-.btn-dificil {
-    background-color: #dc3545; /* Rojo */
-}
-
-.btn-voto:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+.vista-previa-pdf img {
+    width: 80px;
+    margin-bottom: 15px;
 }
 
 .valoracion-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 15px;
-    background-color: #f1f1f1;
-    border-radius: 0 0 10px 10px;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 0 0 12px 12px;
 }
 
-.archivo-titulo {
-    font-size: 1.2rem;
-    color: #5e2129;
-    margin-bottom: 10px;
+.btn-voto {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.vista-previa-pdf {
-    background: linear-gradient(45deg, #f3f4ff, #ffffff);
-    height: 200px;
+.btn-util {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.btn-dificil {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.btn-voto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.btn-util:hover {
+    background: linear-gradient(135deg, #218838, #1aa179);
+}
+
+.btn-dificil:hover {
+    background: linear-gradient(135deg, #c82333, #bd2130);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+    background-color: #0a0b0d;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+    border-top: 2px solid #00d2ff;
+    box-shadow: 0 -10px 25px rgba(0, 210, 255, 0.1);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 2px dashed #5e2129;
-    border-radius: 10px;
-    cursor: pointer;
+    gap: 15px;
 }
 
-.vista-previa-pdf img {
-    width: 60px;
-    margin-bottom: 10px;
+.footer-brand {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.footer-brand span {
+    color: #00d2ff; /* El azul Djins */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00d2ff;
+    text-shadow: 0 0 8px #00d2ff;
+}
+
+.system-status {
+    font-size: 12px;
+    background: rgba(0, 210, 255, 0.05);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #2ecc71; /* Punto verde de activo */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 5px #2ecc71;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.6;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1024px) {
+    .hero,
+    .division-3-7 {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-art {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .contenedor-img,
+    .contenedor-archivos {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .contenedor-formulario {
+        flex-direction: column;
+    }
+
+    .tarjeta {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .hero-card h2,
+    .principal h2,
+    .secundario h1,
+    .secundario h2 {
+        font-size: 18px;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
