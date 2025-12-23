@@ -65,10 +65,20 @@ Protección de rutas privadas mediante control de sesiones en **Flask**.
 ## 📁 Estructura del Proyecto
 
 ```bash
-VaultOfDjins/
-├─ app.py               # Motor principal, rutas y configuración SQL
-├─ requirements.txt     # Dependencias del proyecto
-├─ vault.db             # Base de datos (autogenerada)
-├─ pdf/                 # Repositorio de activos digitales (PDFs)
-├─ static/              # CSS, JavaScript e imágenes
-└─ templates/           # Vistas HTML (index, login, contacto, subir, etc.)
+PaginaWebPersonal/
+├── app.py              # Servidor Flask y lógica de rutas SQL
+├── vault.db            # Base de datos SQLite (Usuarios y Mensajes)
+├── requirements.txt    # Dependencias del sistema
+├── styles.css          # Hoja de estilos principal
+├── README.md           # Documentación técnica
+├── Buscar.html         # Vistas HTML (ubicadas en la raíz)
+├── Contacto.html
+├── index.html
+├── Login.html
+├── MiPerfil.html
+├── NuevosArchivos.html
+├── Subir.html
+├── Valorar.html
+├── js/                 # Lógica de cliente (scripts de validación)
+├── imgs/               # Activos gráficos y logos
+└── pdf/                # Repositorio de documentos almacenados
