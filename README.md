@@ -1,43 +1,74 @@
-🛡️ ProyectoIndividual — Vault of Djins (Flask + SQL + HTML/CSS/JS)
-Sistema de gestión y bóveda digital multipágina diseñada para la organización de activos (PDFs), con autenticación de operador, sistema de mensajería y estética de terminal de alta seguridad.
+# 🛡️ Vault of Djins
+## Digital Asset Vault — Flask • SQL • HTML/CSS/JS
 
-🌐 Demo
-Deploy en PythonAnywhere: https://Djins.pythonanywhere.com
+**Vault of Djins** es un sistema web multipágina diseñado como una **bóveda digital de alta seguridad** para la gestión y consulta de activos (**PDFs**).  
+Integra **autenticación de operadores**, **persistencia de datos en SQL** y una **interfaz inspirada en terminales técnicas de seguridad**.
 
-🧭 Secciones (rutas)
-/ — Panel Principal (Buscador de archivos y acceso al sistema).
+---
 
-/Login.html — Acceso al Core (Autenticación de operador mediante SQL).
+## 🌐 Demo en Producción
 
-/Contacto.html — Transmisión de datos (Formulario de contacto vinculado a la base de datos).
+🔗 **PythonAnywhere Deploy**  
+👉 https://djins.pythonanywhere.com/
 
-/Subir.html — Gestión de Activos (Sección privada para subir nuevos PDFs).
+---
 
-/pdf/<filename> — Recuperación de archivos (Ruta dinámica para visualizar documentos).
+## 🧭 Rutas y Secciones Principales
 
-✨ Características
-Autenticación SQL: Sistema de login real que valida credenciales contra una base de datos.
+| Ruta | Descripción |
+|------|-------------|
+| `/` | **Panel Principal** — Buscador de archivos y acceso al sistema |
+| `/Login.html` | **Autenticación** — Login de operador validado contra SQL |
+| `/Contacto.html` | **Mensajería Persistente** — Formulario almacenado en base de datos |
+| `/Subir.html` | **Gestión de Activos** — Área privada para subir PDFs |
+| `/pdf/<filename>` | **Recuperación Dinámica** — Visualización de documentos |
 
-Persistencia de Mensajería: Los formularios de contacto no solo se envían, se almacenan en el Core SQL.
+---
 
-Buscador Dinámico: Filtro en tiempo real para localizar activos específicos dentro de la bóveda.
+## ✨ Funcionalidades Destacadas
 
-Estética Cyberpunk: Interfaz diseñada con temática de terminal técnica, fuentes monoespaciadas y efectos visuales de carga.
+### 🔐 Autenticación SQL Real
+Validación de credenciales directamente contra la base de datos.
 
-Backend Robusto: Manejo de sesiones para proteger secciones privadas del sitio.
+### 💾 Persistencia de Mensajes
+Los mensajes enviados desde el formulario de contacto se almacenan en el **Core SQL**.
 
-🧰 Tecnologías
-Backend: Python + Flask (Servidor y lógica de rutas en app.py).
+### 🔎 Buscador Dinámico
+Filtrado en tiempo real de activos disponibles dentro de la bóveda.
 
-Base de Datos: SQL (SQLite a través de SQLAlchemy para persistencia de datos).
+### 🖥️ Estética Cyberpunk / Terminal
+Diseño visual basado en interfaces técnicas, con **tipografía monoespaciada** y efectos de carga.
 
-Frontend: HTML5, CSS3 (Diseño responsivo), JavaScript (Fetch API para peticiones asíncronas).
+### 🧠 Gestión de Sesiones
+Protección de rutas privadas mediante control de sesiones en **Flask**.
 
-📁 Estructura del proyecto
+---
+
+## 🧰 Tecnologías Utilizadas
+
+### Backend
+- **Python 3**
+- **Flask**
+- **Flask-SQLAlchemy**
+
+### Base de Datos
+- **SQLite**  
+  Persistencia local, autogenerada
+
+### Frontend
+- **HTML5**
+- **CSS3** — Diseño responsivo
+- **JavaScript** — Fetch API para comunicación asíncrona
+
+---
+
+## 📁 Estructura del Proyecto
+
+```bash
 VaultOfDjins/
-├─ app.py               # Motor principal y configuración de base de datos
-├─ requirements.txt      # Librerías necesarias (Flask, Flask-SQLAlchemy)
-├─ vault.db             # Base de Datos SQL (Generada automáticamente)
-├─ pdf/                 # Repositorio de archivos digitales
-├─ static/              # Estilos CSS, lógica JS e imágenes
-└─ templates/			# Vistas HTML (index, login, contacto, etc.)
+├─ app.py               # Motor principal, rutas y configuración SQL
+├─ requirements.txt     # Dependencias del proyecto
+├─ vault.db             # Base de datos (autogenerada)
+├─ pdf/                 # Repositorio de activos digitales (PDFs)
+├─ static/              # CSS, JavaScript e imágenes
+└─ templates/           # Vistas HTML (index, login, contacto, subir, etc.)
