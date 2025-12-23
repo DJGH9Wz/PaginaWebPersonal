@@ -3,10 +3,12 @@
 ======================================== */
 
 :root {
-    --vault-dark: #0a0b0d;   /* Fondo casi negro */
-    --vault-blue: #00d2ff;   /* Azul neón/eléctrico */
-    --vault-gray: #1a1c20;   /* Gris de tarjetas */
-    --djins-gold: #f39c12;   /* Un toque de dorado para resaltar el nombre */
+    --vault-dark: #0a0b0d;
+    --vault-blue: #00d2ff;
+    --vault-blue-dark: #001f3f;
+    --vault-gray: #1a1c20;
+    --vault-purple: #8b5cf6;
+    --vault-gold: #f39c12;
 }
 
 * {
@@ -17,12 +19,13 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #582f00 0%, #f0a400 50%, #582f00 100%);
+    background: linear-gradient(135deg, var(--vault-dark) 0%, var(--vault-blue-dark) 50%, var(--vault-dark) 100%);
     min-height: 100vh;
+    color: #ffffff;
 }
 
 html {
-    background: linear-gradient(135deg, #582f00 0%, #f0a400 50%, #582f00 100%);
+    background: linear-gradient(135deg, var(--vault-dark) 0%, var(--vault-blue-dark) 50%, var(--vault-dark) 100%);
 }
 
 .logo-vault {
@@ -55,9 +58,9 @@ nav {
 
 .nav-container {
     display: flex;
-    align-items: center; /* Alinea verticalmente el título y los links */
+    align-items: center;
     padding: 0 20px;
-    flex-wrap: wrap; /* Por si hay muchas opciones en pantallas chicas */
+    flex-wrap: wrap;
 }
 
 nav .container {
@@ -67,14 +70,15 @@ nav .container {
 }
 
 .nav-main {
-    margin-left: 20px; /* Separa los links del título "Repositorio UNSA" */
+    margin-left: 20px;
 }
 
 .nav-user {
-    margin-left: auto; /* Empuja este bloque hacia el extremo derecho */
-    background-color: rgba(255, 255, 255, 0.1); /* Opcional: un fondo sutil para diferenciarlo */
+    margin-left: auto;
+    background-color: rgba(243, 156, 18, 0.1);
     border-radius: 25px;
     padding: 5px 15px;
+    border: 1px solid rgba(243, 156, 18, 0.3);
 }
 
 nav h1 {
@@ -84,7 +88,7 @@ nav h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.3);
 }
 
 nav ul {
@@ -101,7 +105,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #e0e0e0;
+    color: #ffffff;
     font-weight: 600;
     font-size: 16px;
     padding: 8px 15px;
@@ -112,17 +116,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--vault-blue);
-    text-shadow: 0 0 5px var(--vault-blue);
+    color: var(--vault-gold);
+    text-shadow: 0 0 8px var(--vault-gold);
     transform: translateY(-3px);
-    background: rgba(240, 164, 0, 0.1);
+    background: rgba(243, 156, 18, 0.1);
 }
 
 nav ul li a.active {
-    text-shadow: 0 0 5px var(--vault-blue);
-    color: var(--vault-blue);
+    text-shadow: 0 0 8px var(--vault-gold);
+    color: var(--vault-gold);
     font-weight: bold;
-    border-bottom: 2px solid #f0a400;
+    border-bottom: 2px solid var(--vault-gold);
 }
 
 nav ul li a::after {
@@ -130,7 +134,7 @@ nav ul li a::after {
     display: block;
     height: 2px;
     width: 0%;
-    background: #f0a400;
+    background: var(--vault-gold);
     transition: width 0.3s;
     margin: auto;
 }
@@ -163,10 +167,11 @@ main {
 }
 
 .hero-card {
-    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    background: var(--vault-dark);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -175,21 +180,24 @@ main {
 
 .hero-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 35px rgba(243, 156, 18, 0.3);
+    border-color: var(--vault-gold);
 }
 
 .hero-card h2 {
     color: white;
-    background: linear-gradient(135deg, #5e2129, #971325);
+    background: var(--vault-dark);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 22px;
+    border: 2px solid var(--vault-gold);
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 .hero-card p {
-    color: #474747;
+    color: #ffffff;
     line-height: 1.8;
     font-size: 16px;
     text-align: justify;
@@ -199,7 +207,7 @@ main {
     list-style: none;
     margin-top: 15px;
     text-align: left;
-    color: #474747;
+    color: #ffffff;
 }
 
 .hero-card ul li {
@@ -212,7 +220,7 @@ main {
     content: "→";
     position: absolute;
     left: 0;
-    color: #5e2129;
+    color: var(--vault-gold);
     font-weight: bold;
 }
 
@@ -223,6 +231,7 @@ main {
     margin: 20px auto 0;
     display: block;
     border-radius: 10px;
+    border: 2px solid rgba(243, 156, 18, 0.3);
 }
 
 /* ========================================
@@ -233,35 +242,39 @@ main {
     margin: 30px auto;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     font-family: 'Montserrat', sans-serif;
-    background: white;
+    background: var(--vault-dark);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     transition: all 0.3s ease;
 }
 
 .principal:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    background: #fff8e7;
+    box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+    border-color: var(--vault-gold);
 }
 
 .principal h2 {
     color: white;
-    background: linear-gradient(135deg, #5e2129, #7d2d37);
+    background: var(--vault-dark);
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 20px;
+    border: 2px solid var(--vault-gold);
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 .principal h2::before {
-    content: "°";
+    content: "◆";
     margin-right: 8px;
+    color: var(--vault-gold);
 }
 
 .principal p {
-    color: #474747;
+    color: #ffffff;
     line-height: 1.7;
     text-align: justify;
 }
@@ -277,13 +290,14 @@ main {
     padding: 8px 0;
     padding-left: 25px;
     position: relative;
+    color: #ffffff;
 }
 
 .principal ul li::before {
     content: "→";
     position: absolute;
     left: 0;
-    color: #5e2129;
+    color: var(--vault-gold);
     font-weight: bold;
 }
 
@@ -295,29 +309,33 @@ main {
     margin: 30px auto;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     font-family: 'Montserrat', sans-serif;
-    background: white;
+    background: var(--vault-dark);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .secundario:hover {
-    background-color: #fff1c7;
+    border-color: var(--vault-gold);
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
 }
 
 .secundario h1,
 .secundario h2 {
     color: white;
-    background: linear-gradient(135deg, #5e2129, #971325);
+    background: var(--vault-dark);
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
+    border: 2px solid var(--vault-gold);
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 .secundario p {
-    color: #474747;
+    color: #ffffff;
     line-height: 1.8;
     font-weight: 600;
 }
@@ -328,6 +346,7 @@ main {
     height: auto;
     margin: 20px auto;
     border-radius: 10px;
+    border: 2px solid rgba(243, 156, 18, 0.3);
 }
 
 .cont-centrado {
@@ -390,40 +409,44 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: var(--vault-dark);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     margin: 30px auto;
 }
 
 th {
-    background: linear-gradient(135deg, #ca7d00, #f0a400);
-    color: white;
+    background: var(--vault-dark);
+    color: var(--vault-gold);
     padding: 15px;
     text-align: center;
     font-weight: bold;
     font-size: 18px;
     border: none;
+    border-bottom: 2px solid var(--vault-gold);
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 td {
     padding: 15px;
     text-align: center;
     font-weight: 600;
-    border-bottom: 2px solid #f0f0f0;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(243, 156, 18, 0.2);
 }
 
 tr:nth-child(even) {
-    background-color: #ffe9b3;
+    background-color: rgba(243, 156, 18, 0.05);
 }
 
 tr:nth-child(odd) {
-    background-color: #fff5d9;
+    background-color: rgba(10, 11, 13, 0.8);
 }
 
 tr:hover {
-    background-color: #ffd480;
+    background-color: rgba(243, 156, 18, 0.15);
     cursor: pointer;
     transition: background 0.2s ease;
 }
@@ -436,28 +459,29 @@ form {
     max-width: 700px;
     margin: 40px auto;
     padding: 40px;
-    background-color: #ffffff;
-    color: #0c0c0c;
+    background: var(--vault-dark);
+    color: #ffffff;
     border-radius: 20px;
-    border: 3px solid #5e2129;
+    border: 2px solid rgba(243, 156, 18, 0.5);
     font-size: 18px;
     font-family: "Segoe UI", Tahoma, sans-serif;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 form h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 32px;
-    color: #5e2129;
+    color: var(--vault-gold);
     font-weight: 700;
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #5e2129;
+    color: var(--vault-gold);
 }
 
 form input,
@@ -466,11 +490,12 @@ form select {
     width: 100%;
     padding: 14px 16px;
     margin-bottom: 20px;
-    background-color: #f3f4ff;
-    border: 2px solid transparent;
+    background-color: rgba(26, 28, 32, 0.8);
+    border: 2px solid rgba(243, 156, 18, 0.3);
     border-radius: 12px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
@@ -483,15 +508,15 @@ form input:focus,
 form textarea:focus,
 form select:focus {
     outline: none;
-    border-color: #5e2129;
-    background-color: #ffffff;
-    box-shadow: 0 0 8px rgba(94, 33, 41, 0.3);
+    border-color: var(--vault-gold);
+    background-color: rgba(26, 28, 32, 1);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.3);
 }
 
 form button {
     width: 48%;
     padding: 14px;
-    background: linear-gradient(135deg, #5e2129, #971325);
+    background: linear-gradient(135deg, var(--vault-gold), #e67e22);
     color: #fff;
     font-size: 18px;
     font-weight: 600;
@@ -500,26 +525,27 @@ form button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 5px 1%;
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.3);
 }
 
 form button:hover {
-    background: linear-gradient(135deg, #7d2d37, #b8142d);
+    background: linear-gradient(135deg, #e67e22, var(--vault-gold));
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(94, 33, 41, 0.4);
+    box-shadow: 0 6px 25px rgba(243, 156, 18, 0.5);
 }
 
 form button[type="reset"] {
-    background: linear-gradient(135deg, #666, #888);
+    background: linear-gradient(135deg, #475569, #64748b);
 }
 
 form button[type="reset"]:hover {
-    background: linear-gradient(135deg, #777, #999);
+    background: linear-gradient(135deg, #64748b, #94a3b8);
 }
 
 .contenedor-formulario {
     display: flex;
     flex-direction: row;
-    background: linear-gradient(to right, #7d2d37 0%, #f0a400 50%, #7d2d37 100%);
+    background: linear-gradient(to right, var(--vault-dark) 0%, var(--vault-blue-dark) 50%, var(--vault-dark) 100%);
     padding: 40px 20px;
     gap: 30px;
     flex-wrap: wrap;
@@ -530,18 +556,19 @@ form button[type="reset"]:hover {
    TARJETAS DE BOTONES
 ======================================== */
 .tarjeta {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    background: var(--vault-dark);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     transition: all 0.3s ease;
     min-width: 250px;
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    background: linear-gradient(145deg, #fff8e7, #ffe9b3);
+    box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+    border-color: var(--vault-gold);
 }
 
 .tarjeta button {
@@ -552,14 +579,16 @@ form button[type="reset"]:hover {
 }
 
 .tarjeta h2 {
-    color: #5e2129;
+    color: var(--vault-gold);
     font-size: 24px;
     font-weight: 700;
     transition: color 0.3s ease;
+    text-shadow: 0 0 8px rgba(243, 156, 18, 0.3);
 }
 
 .tarjeta:hover h2 {
-    color: #971325;
+    color: #fff;
+    text-shadow: 0 0 15px var(--vault-gold);
 }
 
 /* ========================================
@@ -575,16 +604,19 @@ form button[type="reset"]:hover {
 }
 
 .img-item {
-    background: white;
+    background: var(--vault-dark);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(243, 156, 18, 0.3);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 .img-item:hover {
     transform: scale(1.03);
+    border-color: var(--vault-gold);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
 }
 
 .img-item img {
@@ -609,11 +641,11 @@ form button[type="reset"]:hover {
 
 .contenedor-pdf {
     width: 100%;
-    background-color: #ffffff;
-    border: 3px solid #5e2129;
+    background: var(--vault-dark);
+    border: 2px solid rgba(243, 156, 18, 0.5);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .contenedor-pdf iframe {
@@ -621,7 +653,7 @@ form button[type="reset"]:hover {
     height: 600px;
     border: none;
     display: block;
-    background: white;
+    background: var(--vault-dark);
 }
 
 .contenedor-pdf embed {
@@ -635,35 +667,38 @@ form button[type="reset"]:hover {
 ======================================== */
 .archivo-titulo {
     font-size: 1.3rem;
-    color: #5e2129;
+    color: var(--vault-gold);
     margin-bottom: 15px;
     padding: 10px;
-    background: #f3f4ff;
+    background: rgba(243, 156, 18, 0.1);
     border-radius: 10px;
     font-weight: 700;
+    text-shadow: 0 0 8px rgba(243, 156, 18, 0.3);
 }
 
 .vista-previa-pdf {
-    background: linear-gradient(135deg, #f3f4ff, #ffffff);
+    background: rgba(243, 156, 18, 0.05);
     height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 3px dashed #5e2129;
+    border: 3px dashed rgba(243, 156, 18, 0.4);
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .vista-previa-pdf:hover {
-    background: linear-gradient(135deg, #ffe9b3, #fff5d9);
+    background: rgba(243, 156, 18, 0.15);
+    border-color: var(--vault-gold);
     transform: scale(1.02);
 }
 
 .vista-previa-pdf img {
     width: 80px;
     margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(243, 156, 18, 0.5));
 }
 
 .valoracion-container {
@@ -671,7 +706,7 @@ form button[type="reset"]:hover {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: rgba(243, 156, 18, 0.05);
     border-radius: 0 0 12px 12px;
 }
 
@@ -685,28 +720,28 @@ form button[type="reset"]:hover {
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-util {
-    background: linear-gradient(135deg, #28a745, #20c997);
+    background: linear-gradient(135deg, #10b981, #059669);
 }
 
 .btn-dificil {
-    background: linear-gradient(135deg, #dc3545, #c82333);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
 .btn-voto:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
 }
 
 .btn-util:hover {
-    background: linear-gradient(135deg, #218838, #1aa179);
+    background: linear-gradient(135deg, #059669, #047857);
 }
 
 .btn-dificil:hover {
-    background: linear-gradient(135deg, #c82333, #bd2130);
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
 }
 
 /* ========================================
@@ -775,7 +810,7 @@ footer {
 .dot {
     height: 8px;
     width: 8px;
-    background-color: #2ecc71; /* Punto verde de activo */
+    background-color: #2ecc71; 
     border-radius: 50%;
     display: inline-block;
     box-shadow: 0 0 5px #2ecc71;
@@ -787,6 +822,20 @@ footer {
     opacity: 0.6;
 }
 
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.6;
+}
 
 /* ========================================
    RESPONSIVE DESIGN
