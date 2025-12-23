@@ -234,6 +234,62 @@ main {
     border: 2px solid rgba(243, 156, 18, 0.3);
 }
 
+.hero-section {
+    height: 60vh; /* Ocupa el 60% de la altura de la pantalla */
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1500&q=80'); /* Imagen de tecnología/espacio */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 2px solid #00d2ff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 11, 13, 0.7); /* Capa oscura para que el texto resalte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.welcome-text {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.user-logged {
+    color: #00d2ff; /* El azul Djins para tu nombre */
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-stats {
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #2ecc71; /* Verde neón para simular consola */
+    font-size: 0.9rem;
+}
+
 /* ========================================
    TARJETAS PRINCIPALES
 ======================================== */
@@ -886,6 +942,74 @@ footer {
     .tarjeta {
         min-width: 100%;
     }
+}
+
+/* ========================================
+   LOGIN
+======================================== */
+
+.login-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.login-split {
+    display: flex;
+    max-width: 900px;
+    background: #1a1c20;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.login-info {
+    flex: 1;
+    padding: 40px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.login-form-container {
+    flex: 1;
+    padding: 40px;
+    background: #111827;
+}
+
+.system-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #00d2ff;
+}
+
+.btn-auth {
+    background: #00d2ff;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilo para el botón del Nav */
+.btn-login-highlight {
+    background: #00d2ff;
+    color: #000 !important;
+    padding: 5px 15px !important;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-login-highlight:hover {
+    box-shadow: 0 0 10px #00d2ff;
 }
 
 @media (max-width: 480px) {
