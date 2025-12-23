@@ -1,17 +1,25 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_from_directory, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-app = Flask(__name__, template_folder='.', static_folder='.', static_url_path='')
+# --- CONFIGURACIÓN DE RUTAS DINÁMICAS ---
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+app = Flask(__name__, 
+            template_folder=basedir, 
+            static_folder=basedir, 
+            static_url_path='')
+
+# Clave secreta para que las sesiones (login) funcionen en la nube
+app.secret_key = 'vault_of_djins_secret_2025' 
 
 # --- CONFIGURACIÓN DE BASE DE DATOS ---
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///vault.db'
+# Guardamos la DB en la carpeta 'instance' o raíz de forma segura
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'vault.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # --- MODELOS SQL ---
-
-# Modelo para los mensajes de la página de contacto
 class Mensaje(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100))
@@ -19,21 +27,18 @@ class Mensaje(db.Model):
     asunto = db.Column(db.String(100))
     contenido = db.Column(db.Text)
 
-# Modelo para los usuarios del Login
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
 
-# --- INICIALIZACIÓN DE LA BÓVEDA ---
+# --- INICIALIZACIÓN ---
 with app.app_context():
     db.create_all()
-    # Creamos un usuario administrador por defecto si no existe
     if not Usuario.query.filter_by(username='admin').first():
-        admin_default = Usuario(username='admin', password='1234') # Cambia esto después
+        admin_default = Usuario(username='admin', password='1234')
         db.session.add(admin_default)
         db.session.commit()
-        print("SISTEMA: Usuario 'admin' creado exitosamente.")
 
 # --- RUTAS DE NAVEGACIÓN ---
 
@@ -47,22 +52,29 @@ def contacto_page():
 
 @app.route('/Login.html')
 def login_page():
+    # Si ya está logueado, lo mandamos al index
+    if 'usuario' in session:
+        return redirect(url_for('index'))
     return render_template('Login.html')
 
-# --- RUTAS DE LA API (Lógica SQL) ---
+@app.route('/logout')
+def logout():
+    session.pop('usuario', None)
+    return redirect(url_for('index'))
 
-# API para el Login
+# --- RUTAS DE LA API ---
+
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.json
     user = Usuario.query.filter_by(username=data.get('username'), password=data.get('password')).first()
     
     if user:
+        session['usuario'] = user.username # Inicia la sesión
         return jsonify({"status": "success", "message": "Conexión establecida"}), 200
     else:
         return jsonify({"status": "error", "message": "Credenciales inválidas"}), 401
 
-# API para el Formulario de Contacto
 @app.route('/api/contacto', methods=['POST'])
 def recibir_contacto():
     try:
@@ -79,19 +91,19 @@ def recibir_contacto():
     except Exception as e:
         return jsonify({"status": "Error en el Core SQL", "details": str(e)}), 500
 
-# --- GESTIÓN DE ARCHIVOS (PDF Y ESTÁTICOS) ---
+# --- GESTIÓN DE ARCHIVOS ---
 
 @app.route('/pdf/<path:filename>')
 def serve_pdf(filename):
-    # Asegúrate de tener una carpeta llamada 'pdf' en tu proyecto
-    return send_from_directory('pdf', filename)
+    # Esto busca en la carpeta /pdf dentro de tu proyecto
+    pdf_path = os.path.join(basedir, 'pdf')
+    return send_from_directory(pdf_path, filename)
 
 @app.route('/<path:path>')
 def static_proxy(path):
-    # Esto sirve CSS, JS e imágenes que estén en la raíz
-    return send_from_directory('.', path)
+    # Servir archivos estáticos (CSS, JS, imágenes)
+    return send_from_directory(basedir, path)
 
-# --- ARRANQUE DEL SISTEMA ---
+# --- ARRANQUE ---
 if __name__ == '__main__':
-    # Usamos host='0.0.0.0' para facilitar pruebas en red local si fuera necesario
-    app.run(debug=True, port=5000)
+    app.run(debug=True)
