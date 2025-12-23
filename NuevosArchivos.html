@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositorio de actividades</title>
+    <title>Recientes - Portafolio Manuel Valdivia</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <nav>
         <div class="nav-container">
             <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
-            
             <ul class="nav-main">
-                <li><a href="pagina.html" >Explorar</a></li>
-                <li><a href="NuevosArchivos.html " class="active" >Recientes</a></li>
+                <li><a href="pagina.html">Explorar</a></li>
+                <li><a href="NuevosArchivos.html" class="active">Recientes</a></li>
                 <li><a href="Subir.html">Añadir</a></li>
                 <li><a href="Valorar.html">Feedback</a></li>
                 <li><a href="Buscar.html">Buscador</a></li>
             </ul>
-
             <ul class="nav-user">
                 <li><a href="MiPerfil.html">Mi Perfil</a></li>
                 <li><a href="Contacto.html">Contacto</a></li>
@@ -25,105 +25,65 @@
             </ul>
         </div>
     </nav>
-</head>
-<body>
 
-  <main>
+    <main>
+        <section class="contenedor-art division-3-7">
+            <article class="secundario">
+                <h2>Métricas de Archivo</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Items</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Proyectos TIF</td><td>200</td></tr>
+                        <tr><td>Prácticas</td><td>100</td></tr>
+                        <tr><td>Exámenes</td><td>50</td></tr>
+                    </tbody>
+                </table>
+            </article>
 
-    
-    <section class="contenedor-art">
-      <section class="contenedor-filas">
-        <article class="principal">
-          <h2>Recomendaciones al crear archivos</h2>
-          <ul>
-            <li>Usa nombres descriptivos sin espacios (ej.: <code>practica_1.pdf</code>).</li>
-            <li>Organiza tus archivos en carpetas por tema o proyecto.</li>
-            <li>Guarda tus archivos dentro del repositorio local antes de subirlos.</li>
-          </ul>
-        </article>
+            <article class="principal">
+                <h1>Monitor de Actividad Reciente</h1>
+                <p>Bienvenido al registro de mis últimas contribuciones. Aquí se listan los documentos PDF y códigos que he subido recientemente para su observación y valoración por parte de la comunidad universitaria.</p>
+                <div class="system-alert">
+                    <small>Sincronización con base de datos: <strong>Exitosa</strong></small>
+                </div>
+            </article>
+        </section>
 
-        <!--Instrucciones-->
-        <article class="principal">
-          <h2>¿Qué archivos puedes subir?</h2>
-          <p>Puedes subir prácticas, exámenes, proyectos, documentos PDF, imágenes o archivos de código. Asegúrate de que estén bien organizados antes de subirlos.</p>
-        </article>
-      </section>
+        <h2 style="text-align: center; margin: 40px 0 20px; color: var(--vault-blue);">Filtrar Repositorio</h2>
+        <section class="contenedor">
+            <div class="tarjeta filter-btn" data-category="todos">
+                <button><h2>TODOS</h2></button>
+            </div>
+            <div class="tarjeta filter-btn" data-category="practica">
+                <button><h2>PRÁCTICAS</h2></button>
+            </div>
+            <div class="tarjeta filter-btn" data-category="examen">
+                <button><h2>EXÁMENES</h2></button>
+            </div>
+            <div class="tarjeta filter-btn" data-category="material">
+                <button><h2>MATERIAL</h2></button>
+            </div>
+        </section>
 
-      <section class="secundario">
-            <!--Tabla - Ejemplo por ahora-->
-        <h2>Archivos Actuales</h2>
-            <table border "2">
-                <tr>
-                    <th>Tipo de Archivos</th>
-                    <th>Cantidad</th>
-                </tr>
-                <tr>
-                    <td>TIF</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td>Practicas</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Examenes</td>
-                    <td>50</td>
-                </tr>
-            </table>
-      </section>
-    </section>
-
-    <section class="contenedor">
-      <div class="tarjeta">
-        <button><h2>PRACTICAS</h2></button>
-      </div>
-
-      <div class="tarjeta">
-        <button><h2>EXAMENES</h2></button>
-      </div>
-
-      <div class="tarjeta">
-        <button><h2>MATERIAL</h2></button>
-      </div>
-    </section>
-
-    <section class="contenedor-archivos">
-        <div class="contenedor-pdf">
-            <iframe src="pdf/T9-Crisis política Perú 2020.pdf#toolbar=0&navpanes=0&view=FitH">
-                <a href="pdf/T9-Crisis política Perú 2020.pdf">Ver PDF</a>
-            </iframe>
-        </div>
-        
-        <div class="contenedor-pdf">
-            <iframe src="pdf/T10-Comportamiento de los Indicadores del Mercado Laboral a nivel Nacional I Trimestre 2023.pdf#toolbar=0&navpanes=0&view=FitH">
-                <a href="pdf/T10-Comportamiento de los Indicadores del Mercado Laboral a nivel Nacional I Trimestre 2023.pdf">Ver PDF</a>
-            </iframe>
-        </div>
-    </section>
-  </main>
+        <h2 id="section-title" style="text-align: center; margin: 30px 0;">Mostrando: Todos los Archivos</h2>
+        <section class="contenedor-archivos" id="vault-grid">
+            </section>
+    </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-brand">
-                Vault of <span>Djins</span>
-            </div>
-            
-            <div class="footer-links">
-                <a href="Acerca.html">Documentación</a>
-                <a href="Contacto.html">Soporte</a>
-                <a href="#">Privacidad</a>
-            </div>
-
+            <div class="footer-brand">Vault of <span>Djins</span></div>
             <div class="system-status">
-                <span class="dot"></span> 
-                <span>Vault Core: v1.0.0 - Stable</span>
+                <span class="dot"></span> <span id="clock">00:00:00</span>
             </div>
-
-            <p class="copyright">
-                © 2025 | Diseñado por Manuel Valdivia | All Rights Reserved.
-            </p>
         </div>
     </footer>
-    
+
+    <script src="js/recientes.js"></script>
 </body>
 </html>
