@@ -1396,3 +1396,45 @@ footer {
     color: var(--vault-blue);
     border: 1px solid var(--vault-blue);
 }
+
+.status-online {
+    color: #2ecc71;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: 1px solid #2ecc71;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(17, 24, 39, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #2d3748;
+}
+
+th {
+    background-color: rgba(0, 210, 255, 0.1);
+    color: var(--vault-blue);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.perfil-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
