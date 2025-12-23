@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valorar Material - UNSA</title>
+    <title>Valorar - Vault of Djins</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <nav>
         <div class="nav-container">
             <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
-            
             <ul class="nav-main">
                 <li><a href="pagina.html">Explorar</a></li>
                 <li><a href="NuevosArchivos.html">Recientes</a></li>
@@ -25,74 +26,16 @@
             </ul>
         </div>
     </nav>
-</head>
-<body>
 
-<main>
-    <section class="principal">
-        <h2>Panel de Valoración de Material</h2>
-        <p>Revisa el contenido y ayuda a la comunidad calificando la utilidad de los archivos.</p>
-    </section>
+    <main class="container-full">
+        <section class="principal">
+            <h2>Terminal de Feedback de Activos</h2>
+            <p>Analiza el material técnico y registra su nivel de utilidad en la base de datos.</p>
+        </section>
 
-    <section class="contenedor-archivos">
-    
-        <article class="secundario">
-            <h3 class="archivo-titulo">Examen Parcial - Cálculo A</h3>
-            
-            <div class="contenedor-pdf">
-                <iframe src="pdf/examen1.pdf#toolbar=0"></iframe>
-            </div>
-            
-            <div class="valoracion-container">
-                <form action="procesar_voto.php" method="POST">
-                    <input type="hidden" name="id_material" value="1">
-                    <button type="submit" name="voto" value="positivo" class="btn-voto btn-util">👍 Útil</button>
-                    <button type="submit" name="voto" value="negativo" class="btn-voto btn-dificil">🔥 Muy Difícil</button>
-                </form>
-            </div>
-        </article>
-
-        <article class="secundario">
-            <h3 class="archivo-titulo">Práctica 3 - Discretas</h3>
-            
-            <div class="contenedor-pdf">
-                <iframe src="pdf/practica3.pdf#toolbar=0"></iframe>
-            </div>
-
-            <div class="valoracion-container">
-                <form action="procesar_voto.php" method="POST">
-                    <input type="hidden" name="id_material" value="2">
-                    <button type="submit" name="voto" value="positivo" class="btn-voto btn-util">👍 Útil</button>
-                    <button type="submit" name="voto" value="negativo" class="btn-voto btn-dificil">🔥 Muy Difícil</button>
-                </form>
-            </div>
-        </article>
-
-    </section>
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-brand">
-            Vault of <span>Djins</span>
-        </div>
-        
-        <div class="footer-links">
-            <a href="Acerca.html">Documentación</a>
-            <a href="Contacto.html">Soporte</a>
-            <a href="#">Privacidad</a>
-        </div>
-
-        <div class="system-status">
-            <span class="dot"></span> 
-            <span>Vault Core: v1.0.0 - Stable</span>
-        </div>
-
-        <p class="copyright">
-            © 2025 | Diseñado por Manuel Valdivia | All Rights Reserved.
-        </p>
-    </div>
-</footer>
-
+        <section class="lista-valoracion-wide" id="valorar-grid">
+            </section>
+    </main>
+    <script src="js/valorar.js"></script>
 </body>
 </html>
