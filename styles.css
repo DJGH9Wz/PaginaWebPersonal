@@ -1475,3 +1475,116 @@ th {
     color: #000;
     box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
 }
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.card-mini {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.status-badge {
+    background: #00ff0022;
+    color: #00ff00;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.hero-personal {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.hero-card-dark {
+    background: linear-gradient(135deg, #111, #222);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Formulario ancho, info estrecha */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Estilo para los ítems de redes sociales */
+.social-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-item {
+    display: block;
+    padding: 10px 15px;
+    background: #2a2a2a;
+    color: #ffd700; /* Color dorado tipo Djins */
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+.social-item:hover {
+    background: #ffd700;
+    color: #1a1a1a;
+    transform: translateX(5px);
+}
+
+/* Tarjetas laterales (Bóveda personal) */
+.card-mini {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    color: #eee;
+}
+
+.card-mini h3 {
+    margin-top: 0;
+    color: #ffd700;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Líneas de estadísticas */
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+/* Responsividad para celulares */
+@media (max-width: 768px) {
+    .grid-contacto {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+}
