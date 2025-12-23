@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { nombre: "Guía de Material 1", file: "material1.pdf", tipo: "material" },
         { nombre: "Guía de Material 2", file: "material2.pdf", tipo: "material" },
         { nombre: "Guía de Material 3", file: "material3.pdf", tipo: "material" },
+        { nombre: "Crisis Política Perú 2020", file: "material4.pdf", tipo: "material" },
+        { nombre: "Indicadores Mercado Laboral", file: "material5.pdf", tipo: "material" },
         { nombre: "Práctica Calificada 1", file: "practica1.pdf", tipo: "practica" },
         { nombre: "Práctica Calificada 2", file: "practica2.pdf", tipo: "practica" },
-        { nombre: "Práctica Calificada 3", file: "practica3.pdf", tipo: "practica" },
-        { nombre: "Crisis Política Perú 2020", file: "T9-Crisis política Perú 2020.pdf", tipo: "material" },
-        { nombre: "Indicadores Mercado Laboral", file: "T10-Comportamiento de los Indicadores del Mercado Laboral a nivel Nacional I Trimestre 2023.pdf", tipo: "material" }
+        { nombre: "Práctica Calificada 3", file: "practica3.pdf", tipo: "practica" }
     ];
 
     const renderArchivos = (filtro = "todos") => {

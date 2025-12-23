@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'ex1', nombre: "Examen Parcial - Cálculo A", file: "examen1.pdf", tipo: "examen", curso: "Cálculo A", fecha: "15/11/2024" },
         { id: 'ex2', nombre: "Examen Unidad 2", file: "examen2.pdf", tipo: "examen", curso: "Cálculo A", fecha: "20/12/2024" },
         { id: 'pr3', nombre: "Práctica 3 - Discretas", file: "practica3.pdf", tipo: "practica", curso: "Estructuras Discretas", fecha: "20/10/2024" },
-        { id: 't9', nombre: "Crisis Política Perú 2020", file: "T9-Crisis política Perú 2020.pdf", tipo: "material", curso: "Realidad Nacional", fecha: "05/10/2024" },
-        { id: 't10', nombre: "Indicadores Mercado Laboral", file: "T10-Comportamiento de los Indicadores del Mercado Laboral a nivel Nacional I Trimestre 2023.pdf", tipo: "material", curso: "Estadística", fecha: "28/09/2024" }
+        { id: 't9', nombre: "Crisis Política Perú 2020", file: "material4.pdf", tipo: "material", curso: "Realidad Nacional", fecha: "05/10/2024" },
+        { id: 't10', nombre: "Indicadores Mercado Laboral", file: "material5.pdf", tipo: "material", curso: "Estadística", fecha: "28/09/2024" }
     ];
 
     const ejecutarFiltro = () => {
