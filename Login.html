@@ -4,43 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Vault of Djins</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="auth-page">
     <nav>
-        </nav>
+        <div class="nav-container">
+            <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
+            <ul class="nav-main">
+                <li><a href="index.html"></a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="login-layout">
         <section class="login-split">
             <article class="login-info">
                 <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
-                <p><strong>Core System v1.0.0</strong></p>
-                <p>Bienvenido al terminal de acceso. Este sistema gestiona la indexación y recuperación de activos digitales de Manuel Valdivia.</p>
+                <p class="core-version">Core System v1.0.5</p>
+                <p>Bienvenido al terminal de acceso. Este sistema gestiona la recuperación de activos digitales de <strong>Manuel Valdivia</strong>.</p>
                 <ul class="system-features">
-                    <li>✓ Encriptación de archivos</li>
-                    <li>✓ Gestión de Base de Datos SQL</li>
-                    <li>✓ Acceso multi-usuario controlado</li>
+                    <li>✓ Encriptación AES-256 activa</li>
+                    <li>✓ Gestión de Activos PDF</li>
+                    <li>✓ Acceso restringido al Operador</li>
                 </ul>
             </article>
 
             <article class="login-form-container">
-                <form class="auth-form">
+                <form class="auth-form" id="login-form">
                     <h2>Autenticación</h2>
                     <div class="input-group">
                         <label>Operador</label>
-                        <input type="text" placeholder="Usuario o Email">
+                        <input type="text" id="user" placeholder="Usuario o Email" required>
                     </div>
                     <div class="input-group">
                         <label>Código de Seguridad</label>
-                        <input type="password" placeholder="••••••••">
+                        <input type="password" id="pass" placeholder="••••••••" required>
                     </div>
-                    <button type="submit" class="btn-auth">Sincronizar con la Bóveda</button>
-                    <p class="form-help">¿Olvidaste tus credenciales? <a href="#">Contactar Administrador</a></p>
+                    
+                    <div id="login-status" class="status-msg-login"></div>
+
+                    <button type="submit" class="btn-auth" id="btn-login">Sincronizar con la Bóveda</button>
+                    <p class="form-help">¿Olvidaste tus credenciales? <a href="Contacto.html">Contactar Administrador</a></p>
                 </form>
             </article>
         </section>
     </main>
 
-    </body>
+    <script src="login.js"></script>
+</body>
 </html>
