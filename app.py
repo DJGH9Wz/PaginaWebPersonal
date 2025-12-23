@@ -1,17 +1,22 @@
 from flask import Flask, render_template, send_from_directory
 import os
 
-# Configuramos static_folder como '.' para que busque en la raíz
-app = Flask(__name__, template_folder='.', static_folder='.')
+app = Flask(__name__, template_folder='.', static_folder='.', static_url_path='')
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Esta ruta permite que Flask encuentre styles.css, buscar.js, etc., si están sueltos
+# NUEVA RUTA ESPECÍFICA PARA LA CARPETA PDF
+@app.route('/pdf/<path:filename>')
+def serve_pdf(filename):
+    # Esto busca el archivo dentro de la carpeta 'pdf' en tu proyecto
+    return send_from_directory('pdf', filename)
+
+# Ruta comodín para el resto (CSS, JS sueltos)
 @app.route('/<path:path>')
-def send_file(path):
+def serve_static(path):
     return send_from_directory('.', path)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
