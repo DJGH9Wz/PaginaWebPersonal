@@ -290,6 +290,7 @@ main {
     font-size: 0.9rem;
 }
 
+
 /* ========================================
    TARJETAS PRINCIPALES
 ======================================== */
@@ -1010,6 +1011,124 @@ footer {
 
 .btn-login-highlight:hover {
     box-shadow: 0 0 10px #00d2ff;
+}
+
+/* ========================================
+   SECCIÓN COLABORADORES
+======================================== */
+
+.colaboradores-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 40px; 
+    padding: 0 20px 80px;
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+.colaborador-card {
+    flex: 1;
+    max-width: 400px; /* Aumentamos el ancho de cada cuadro */
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    padding: 40px 30px; /* Más espacio interno */
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.principal-dev {
+    border: 1px solid var(--vault-blue);
+    background: linear-gradient(180deg, rgba(0, 210, 255, 0.05) 0%, rgba(17, 24, 39, 1) 100%);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
+}
+
+/* El marco cuadrado de la foto */
+.foto-marco {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 2px solid #1f2937;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.colaborador-card h3 {
+    font-size: 1.5rem; /* Nombre más grande */
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.foto-colaborador {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la foto no se estire */
+    filter: grayscale(80%) contrast(120%); /* Efecto visual serio */
+    transition: all 0.5s ease;
+}
+
+/* Efectos al pasar el ratón */
+.colaborador-card:hover {
+    border-color: var(--vault-blue);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
+}
+
+.colaborador-card:hover .foto-colaborador {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--vault-blue);
+    box-shadow: 0 15px 40px rgba(0, 210, 255, 0.2);
+    z-index: 10;
+}
+
+.colaborador-card:hover .foto-marco {
+    border-color: var(--vault-blue);
+    box-shadow: 0 0 15px var(--vault-blue);
+}
+
+/* Textos */
+.colaborador-card h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.role {
+    display: inline-block;
+    padding: 4px 15px;
+    background: var(--vault-blue);
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.colaborador-card p:not(.role) {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.bio {
+    font-size: 1rem; 
+    color: #cbd5e1;
+    line-height: 1.6;
+    text-align: justify; 
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .colaboradores-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .colaborador-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
