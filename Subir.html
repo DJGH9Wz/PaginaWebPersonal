@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositorio de actividades</title>
+    <title>Admin Vault - Carga de Activos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <nav>
         <div class="nav-container">
             <h1 class="logo-vault">Vault of <span class="djins-text">Djins</span></h1>
-            
             <ul class="nav-main">
                 <li><a href="pagina.html">Explorar</a></li>
                 <li><a href="NuevosArchivos.html">Recientes</a></li>
@@ -25,87 +26,56 @@
             </ul>
         </div>
     </nav>
-</head>
-<body>
 
-  <main>
-    <div class="contenedor-filas">
-      <section class="contenedor-formulario">
+    <main>
+        <div class="contenedor-filas">
+            <section class="contenedor-formulario">
+                <form id="upload-form">
+                    <h2>Terminal de Carga de Proyectos</h2>
+                    <p style="color: var(--vault-blue); font-size: 0.8rem; margin-bottom: 20px;">Operador: Manuel Valdivia | Nivel de Acceso: Root</p>
 
-          <!--Formulario para subir archivos-->
-        <form action="#" method="post" enctype="multipart/form-data">
-          <h2>Sube tus archivos</h2>
-          <label>Nombre del archivo o proyecto:</label><br>
-          <input type="text" name="nombre" required placeholder="Ej: Práctica 3"><br><br>
+                    <label>Nombre del Documento:</label>
+                    <input type="text" id="file-name" required placeholder="Ej: Laboratorio_Fisica_U2">
 
-          <label>Descripción:</label><br>
-          <textarea name="descripcion" required placeholder="Describe el contenido..."></textarea><br><br>
+                    <label>Categoría del Archivo:</label>
+                    <select id="file-type" required>
+                        <option value="practica">Práctica Calificada</option>
+                        <option value="examen">Examen / Evaluación</option>
+                        <option value="material">Material de Estudio</option>
+                        <option value="proyecto">Proyecto TIF</option>
+                    </select>
 
-          <label>Tipo de material:</label><br>
-          <select name="tipo" required>
-            <option value="">--Selecciona el tipo--</option>
-            <option>Práctica</option>
-            <option>Examen</option>
-            <option>Proyecto</option>
-            <option>Otro</option>
-          </select><br><br>
+                    <label>Descripción del Avance:</label>
+                    <textarea id="file-desc" required placeholder="Resumen técnico del archivo..."></textarea>
 
-          <label>Asignatura o curso:</label><br>
-          <input type="text" name="curso" required placeholder="Ej: Estructuras Discretas"><br><br>
+                    <div id="drop-zone" class="drop-zone">
+                        <span class="drop-zone__prompt">Arrastra tu PDF aquí o haz clic para buscar</span>
+                        <input type="file" name="myFile" id="file-input" class="drop-zone__input" accept=".pdf">
+                    </div>
 
-          <label>Fecha o periodo:</label><br>
-          <input type="date" name="fecha"><br><br>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-auth">Sincronizar con la Bóveda</button>
+                        <button type="reset" class="btn-reset">Abortar</button>
+                    </div>
+                </form>
+            </section>
 
-          <label>Selecciona el archivo (PDF):</label><br>
-          <input type="file" name="archivo" accept=".pdf" required><br><br>
+            <section class="contenedor-art">
+                <div class="secundario">
+                    <h2>Log de Sesión</h2>
+                    <ul id="upload-log" style="font-family: monospace; font-size: 0.85rem; color: #2ecc71;">
+                        <li>> Sistema listo para nueva entrada...</li>
+                    </ul>
+                </div>
 
-          <button type="submit">Subir</button>
-          <button type="reset">Restablecer</button>
-        </form>    
-        
-      </section>
-
-      <!--Ejemplos (por ahora)-->
-      <section class="contenedor-art">
-        <div class="secundario">
-          <h2>Archivos subidos recientemente</h2>
-          <ul>
-            <li>practica1.pdf</li>
-            <li>examen_final.zip</li>
-            <li>captura_resultado.png</li>
-          </ul>
+                <div class="secundario">
+                    <h2>Protocolo de Seguridad</h2>
+                    <p>Recuerda que todos los archivos subidos serán indexados automáticamente en la sección <strong>Recientes</strong>.</p>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div class="secundario">
-          <h2>Selecciona tus archivos</h2>
-          <p>Puedes subir tus prácticas, exámenes u otros documentos desde tu computadora.</p>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-        <div class="footer-brand">
-            Vault of <span>Djins</span>
-        </div>
-        
-        <div class="footer-links">
-            <a href="Acerca.html">Documentación</a>
-            <a href="Contacto.html">Soporte</a>
-            <a href="#">Privacidad</a>
-        </div>
-
-        <div class="system-status">
-            <span class="dot"></span> 
-            <span>Vault Core: v1.0.0 - Stable</span>
-        </div>
-
-        <p class="copyright">
-            © 2025 | Diseñado por Manuel Valdivia | All Rights Reserved.
-        </p>
-    </div>
-</footer>
-    
+    <script src="js/subir.js"></script>
 </body>
 </html>
