@@ -1438,3 +1438,40 @@ tr:hover {
     margin: 10px 0;
     font-size: 1.1rem;
 }
+
+.principal {
+    transition: transform 0.3s ease;
+}
+
+.principal:hover {
+    transform: translateY(-5px);
+    border-left: 4px solid var(--vault-blue);
+    background: linear-gradient(90deg, rgba(0, 210, 255, 0.05) 0%, transparent 100%);
+}
+
+/* Tablas de FAQ */
+table {
+    margin-top: 15px;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+th {
+    background: #111827;
+    color: var(--vault-blue);
+    border-bottom: 2px solid var(--vault-blue);
+}
+
+/* Botón de aplicación para moderadores */
+.secundario .btn-util {
+    background: transparent;
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.secundario .btn-util:hover {
+    background: #2ecc71;
+    color: #000;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+}

@@ -35,41 +35,30 @@
         </section>
 
         <section class="contenedor-formulario">
-            <form action="#" method="POST">
-                <h2>💬 Envíanos un Mensaje</h2>
+            <form id="contact-vault-form">
+                <h2>💬 Enviar Señal a la Bóveda</h2>
                 
                 <label>Nombre completo:</label>
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="text" id="contact-name" placeholder="Tu nombre" required>
 
                 <label>Correo electrónico:</label>
-                <input type="email" name="email" placeholder="tu.email@unsa.edu.pe" required>
-
-                <label>Código de estudiante (opcional):</label>
-                <input type="text" name="codigo" placeholder="Ej: 2024-12345">
+                <input type="email" id="contact-email" placeholder="tu.email@unsa.edu.pe" required>
 
                 <label>Asunto:</label>
-                <select name="asunto" required>
+                <select id="contact-subject" required>
                     <option value="">-- Selecciona un asunto --</option>
-                    <option>Problema técnico</option>
-                    <option>Sugerencia de mejora</option>
-                    <option>Reporte de contenido inapropiado</option>
-                    <option>Solicitud de nueva funcionalidad</option>
-                    <option>Quiero ser moderador</option>
-                    <option>Colaboración institucional</option>
-                    <option>Otro</option>
+                    <option value="tecnico">Problema técnico</option>
+                    <option value="sugerencia">Sugerencia de mejora</option>
+                    <option value="reporte">Reporte de contenido</option>
+                    <option value="moderador">Quiero ser moderador</option>
                 </select>
 
                 <label>Mensaje:</label>
-                <textarea name="mensaje" rows="8" placeholder="Describe tu consulta o sugerencia detalladamente..." required></textarea>
+                <textarea id="contact-message" rows="5" placeholder="Describe tu consulta..." required></textarea>
 
-                <label>Prioridad:</label>
-                <select name="prioridad">
-                    <option>Normal</option>
-                    <option>Alta (urgente)</option>
-                    <option>Baja (informativa)</option>
-                </select>
+                <div id="form-status" style="margin-bottom: 15px; display: none; padding: 10px; border-radius: 5px; text-align: center;"></div>
 
-                <button type="submit">Enviar Mensaje</button>
+                <button type="submit" id="btn-send-contact">Enviar Mensaje</button>
                 <button type="reset">Limpiar Formulario</button>
             </form>
         </section>
